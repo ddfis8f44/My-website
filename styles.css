@@ -1,0 +1,225 @@
+/* إعادة تعيين القيم الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;  /* استخدام الخط الجديد Poppins */
+    background-color: #2f2f2f;  /* خلفية رصاصي غامق */
+    color: #fff;  /* النصوص باللون الأبيض */
+    line-height: 1.6;
+}
+
+section {
+    padding: 80px 20px;  /* زيادة المسافات بين الأقسام */
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-box, .about-box, .projects-box, .services-box, .contact-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;  /* عناوين بأوزان ثقيلة لتكون بارزة */
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;  /* حجم أكبر للعنوان الرئيسي */
+}
+
+h2 {
+    font-size: 2rem;  /* حجم متوسط للعناوين الفرعية */
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* تصميم الأزرار */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 28px;  /* زيادة حجم الحواف */
+    text-decoration: none;
+    border-radius: 25px;  /* جعل الزر ذو حواف مستديرة أكثر */
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 1.1rem;  /* زيادة حجم الخط قليلاً */
+    font-weight: 600;  /* جعل الخط عريض ليكون بارزًا */
+    text-transform: uppercase;  /* تحويل النص إلى حروف كبيرة */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* إضافة ظل ناعم للأزرار */
+}
+
+/* تأثيرات التمرير على الأزرار */
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);  /* رفع الزر للأعلى عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* زيادة حجم الظل عند التمرير */
+}
+
+/* زر "اعرف المزيد عنّي" */
+.btn-more {
+    background-color: #f39c12;  /* لون ذهبي جذاب */
+    border-radius: 50px;  /* جعله أكثر استدارة */
+    padding: 16px 32px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.btn-more:hover {
+    background-color: #e67e22;  /* تغيير اللون عند التمرير إلى درجة أغمق */
+    transform: translateY(-5px);  /* رفع الزر عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* إضافة تأثير الظل */
+}
+
+/* زر "إرسال بريد إلكتروني" */
+.btn-email {
+    background-color: #27ae60;  /* لون أخضر مميز */
+    border-radius: 50px;  /* جعله أكثر استدارة */
+    padding: 16px 32px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-email:hover {
+    background-color: #2ecc71;  /* تغيير اللون إلى درجة أكثر إشراقًا عند التمرير */
+    transform: translateY(-5px);  /* رفع الزر عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* إضافة تأثير الظل */
+}
+
+
+.about-content, .projects-list, .service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-item, .service-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover, .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* تعديل صورة الملف الشخصي */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* استجابة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .project-item, .service-item {
+        width: 100%;
+    }
+}
+
+/* تنسيق القسم الخاص بمواقع التواصل الاجتماعي */
+.social-box {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;  /* اللون الأبيض للنص */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* المسافة بين الأيقونات */
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    background-color: #333;  /* خلفية داكنة للأيقونات */
+    padding: 20px;
+    border-radius: 50%;  /* جعل الأيقونات دائرية */
+    color: #fff;  /* اللون الأبيض للنص */
+    font-size: 2.5rem;  /* حجم أكبر للأيقونة */
+    width: 70px;
+    height: 70px;
+    line-height: 70px;  /* جعل الأيقونة تكون في منتصف الدائرة */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);  /* تكبير الأيقونة عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);  /* إضافة تأثير الظل عند التمرير */
+}
+
+/* تخصيص الألوان لتأثيرات مختلفة عند التمرير */
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f9a8d4, #f27272);  /* تدرج ألوان لإنستقرام */
+}
+
+.social-icon.telegram {
+    background: linear-gradient(45deg, #0088cc, #00bfff);  /* تدرج ألوان لتيليجرام */
+}
+
+.social-icon:hover.instagram {
+    background: linear-gradient(45deg, #f27272, #f9a8d4);  /* عكس التدرج عند التمرير */
+}
+
+.social-icon:hover.telegram {
+    background: linear-gradient(45deg, #00bfff, #0088cc);  /* عكس التدرج عند التمرير */
+}
+
+/* تأثيرات التمرير للأيقونات */
+.social-icon i {
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover i {
+    transform: rotate(20deg);  /* دوران الأيقونة عند التمرير */
+}
+
+/* جعل النصوص أكثر وضوحًا */
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
